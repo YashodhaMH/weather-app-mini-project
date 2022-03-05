@@ -1,0 +1,70 @@
+#columne input[type="text"] {
+  color: rgb(10, 4, 4);
+  font-weight: 100px;
+
+  height: 45px;
+
+  background-color: rgba(255, 255, 255);
+}
+.input-group {
+  border: 1px solid #ffffff;
+
+  opacity: 0.3;
+  border-radius: 3px;
+}
+.modal-content {
+  border-radius: 0;
+  border: none;
+}
+.modal-dialog,
+.modal-content {
+  height: 100%;
+  width: 100%;
+}
+.fa fa-arrow-left {
+  font-size: 20px;
+  color: white;
+}
+#inp {
+  border: 0;
+  width: 300px;
+  text-align: center;
+}
+#w {
+  font-size: 20px;
+  color: black;
+}
+#columne {
+}
+.logo_web_mobile {
+  display: none;
+}
+
+#columne button {
+  height: 45px;
+  color: rgb(19, 16, 16);
+  font-weight: 100px;
+
+  background-color: rgba(255, 255, 255);
+}
+
+.search-icon {
+  display: none;
+}
+@media only screen and (max-width: 580px) {
+  .input-group {
+    display: none;
+  }
+  .search-icon {
+    display: block;
+    font-size: larger;
+    position: absolute;
+    left: 90%;
+    top: 4%;
+    color: #ffffff;
+  }
+  .logo_web {
+    position: absolute;
+    left: 30%;
+  }
+}

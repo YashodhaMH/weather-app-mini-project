@@ -1,0 +1,153 @@
+.icon-mostly-sunny {
+  height: 84px;
+  width: 80px;
+}
+.udupi-karnataka {
+  height: 24px;
+  width: 200px;
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 24px;
+  text-align: center;
+}
+.line-copy {
+  box-sizing: border-box;
+  height: 1px;
+
+  border: 1px solid #ffffff;
+  opacity: 0.3;
+}
+.add-to-favourite {
+  height: 15px;
+  width: 150px;
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+.desc {
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 25px;
+}
+.min-max {
+  height: 25px;
+  width: 69px;
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 25px;
+}
+
+.min-maxl {
+  height: 18px;
+
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+.toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle button {
+  width: 28px;
+  height: 30px;
+
+  border: 2px solid white;
+}
+.feel {
+  font-size: 64px;
+}
+#temperature {
+  font-size: 88px;
+  font-weight: bold;
+  color: white;
+
+  margin: 0px 19px 0px;
+}
+
+.main {
+  display: flex;
+  height: 40px;
+  width: 83px;
+  margin-top: 20px;
+}
+
+#btn1,
+#btn2 {
+  font-size: 22px;
+  line-height: 2;
+  font-family: "open";
+  font-weight: bold;
+  color: red;
+  max-width: 100px;
+  max-height: 50px;
+  height: 100%;
+  width: 100%;
+}
+#date1 {
+  display: none;
+}
+.mostly-sunny {
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 25px;
+}
+.break {
+  display: none;
+}
+@media only screen and (max-width: 580px) {
+  #footer{
+    overflow: hidden;
+    width:580px;
+    height:100px
+  }
+  #date1 {
+    display: block;
+  }
+  #date {
+    display: block;
+    justify-content: center;
+
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 16px;
+    text-align: right;
+  }
+  #temperature {
+    font-size: 50px;
+    margin: 0px 5px 5px;
+  }
+  .udupi-karnataka {
+    justify-content: center;
+  }
+  .container::before {
+    content: "\A";
+    white-space: pre;
+  }
+  .break {
+    display: block;
+  }
+
+  #fav {
+    justify-content: center;
+  }
+}

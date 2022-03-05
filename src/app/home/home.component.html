@@ -1,0 +1,153 @@
+<br />
+
+<div class="container">
+  <div class="container ml-2">
+    <div class="row" id="date1">
+      <div class="col d-flex" id="date">
+        <span class="wed-28-nov-2018-11">
+
+          {{ dateTime | date: "EEE" | uppercase }},
+           {{ dateTime | date: "dd" }}
+           {{ dateTime | date: "MMM" | uppercase }}
+           {{ dateTime | date: "yyyy" }}&nbsp;
+           {{ dateTime | date: "hh" }}:{{ dateTime | date: "mm" }}&nbsp;
+           {{ dateTime | date: "a" }}
+         </span> 
+      </div>
+    </div>
+    <div class="break">
+      <br />
+    </div>
+    <div class="row">
+      <div class="col d-flex udupi-karnataka" id="udupi-karnataka">
+        {{ weatherResponseObject.name }} ,{{
+          weatherResponseObject.sys.country
+        }}
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col d-flex" id="fav">
+        <span id="heart" class="add-to-favourite"
+          ><i
+            (click)="onHeartClick()"
+            [ngClass]="isLiked ? 'fa fa-heart' : 'fa fa-heart-o'"
+            aria-hidden="true"
+          ></i>
+          <!-- <fa-icon [icon]="faHeart"></fa-icon> -->&nbsp;Add to Favourite
+        </span>
+      </div>
+    </div>
+
+    <div class="break"><br /><br /></div>
+    <div class="row justify-content-center">
+      <img
+        src="http://openweathermap.org/img/w/{{
+          this.weatherResponseObject.weather[0].icon
+        }}.png"
+        class="icon-mostly-sunny"
+      />
+    </div>
+    <div class="row justify-content-center">
+      <div class="toggle">
+        <div class="feel">
+          <!-- <span>&#176;</span> -->
+          <p id="temperature" *ngIf="c; else f">{{ C }}</p>
+          <ng-template #f>
+            <p id="temperature">{{ F }}</p>
+          </ng-template>
+        </div>
+        <div class="main">
+          <button
+            id="btn1"
+            style="
+              border-right: none;
+              border-top-left-radius: 2px;
+              border-bottom-left-radius: 2px;
+            "
+            (click)="onClickbutton1()"
+            [ngStyle]="getValueCss()"
+          >
+            <span class="span">&#176;C</span>
+          </button>
+          <button
+            id="btn2"
+            style="
+              border-top-right-radius: 2px;
+              border-bottom-right-radius: 2px;
+            "
+            (click)="onClickbutton2()"
+            [ngStyle]="getCssss()"
+          >
+            <span class="span">&#176;F</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <br /><br />
+    <div class="row justify-content-center mostly-sunny">
+      {{ weatherResponseObject.weather[0].description }}
+    </div>
+
+    <br /><br /><br />
+    <hr class="line-copy" />
+
+    <div class="row" id="footer">
+      <div class="col">
+        <div class="group-6-copy">
+          <img
+            src="assets\images\temperature.png"
+            class="icon-temperature-info"
+          />
+          <span class="min-maxl">Min-Max</span>
+
+          <div>
+            <span class="min-max">{{ tmin }}</span>
+            <span class="o-minmax">- </span>
+            <span class="min-max">{{ tmax }}</span>
+            <span class="o-minmax"> </span>
+            <span class="min-max">C</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <img
+          src="assets\images\precipitation.png"
+          class="icon-temperature-info"
+        />
+        <span class="min-maxl">&nbsp;Cloudiness</span>
+        <div>
+          <span class="min-max">{{ weatherResponseObject.clouds.all }}%</span>
+        </div>
+      </div>
+      <div class="col">
+        <img src="assets\images\humidity.png" class="icon-temperature-info" />
+        <span class="min-maxl">&nbsp;Humidity</span>
+        <div>
+          <span class="min-max"
+            >{{ weatherResponseObject.main.humidity }}%</span
+          >
+        </div>
+      </div>
+      <div class="col">
+        <img src="assets\images\wind.png" class="icon-temperature-info" />
+        <span class="min-maxl">Wind</span>
+        <div>
+          <span class="min-max"
+            >{{ weatherResponseObject.main.humidity }}&nbsp;m/sec</span
+          >
+        </div>
+      </div>
+      <div class="col">
+        <img src="assets\images\visibility.png" class="icon-temperature-info" />
+        <span class="min-maxl">&nbsp;Visibility</span>
+        <div>
+          <span class="min-max"
+            >&nbsp;{{ weatherResponseObject.visibility }}&nbsp; m</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
