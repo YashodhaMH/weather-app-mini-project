@@ -1,19 +1,108 @@
 .table>tbody>tr{
     background-color:  rgba(255, 255, 255, 0.1); 
+    margin-top: 0.1em;
+    margin-bottom: 0.2em;
   }
   td{
     color: white;
+  }
+  /* tr{
+   
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) ;
+  } */
+  .table>tbody>tr:hover{
+    background-color:  rgba(255, 255, 255, 0.2); 
+ 
   }
   #noData{
     color:white;
     font-size:20px;
   }
+  td{
+    border-bottom: 0px;
+    color: white;
+  }
   .break{
     display:none
+  }
+  .fa-heart-o {
+    color: white;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 20px;
+  }
+  .name{
+   
+    cursor: pointer;
+  }
+  .name:hover{
+    color: #FAD05B;
+  }
+  .fa-heart {
+    color: #FAD05B;
+    cursor: pointer;
+    font-size: 20px;
   }
   @media only screen and (max-width: 580px){
     .break{
       display:block
     }
   }
- 
+  @media only screen and (max-width: 400px){
+    .table>tbody>tr{
+     
+    position: relative;
+    height: 80px;
+    /* width: 328px; */
+    }
+    .name{
+      position: absolute;
+      top:10px;
+      width: 123px;
+      color: #FFE539;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 18px;
+  left:15px;
+    }
+    .m{
+      position: absolute;
+      top:20px;
+      color: #FFFFFF;
+      font-family: Roboto;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 21px;
+      left:0px;
+    }
+    .f{
+      position: absolute;
+      top:38px;
+      left:50px;
+   
+    
+    }
+    .c{
+      position: absolute;
+      top:40px;
+     left:90px;
+     color: #FFFFFF;
+     font-family: Roboto;
+     font-size: 14px;
+     letter-spacing: 0;
+     line-height: 16px;
+   
+    }
+    .heart{
+      position: absolute;
+      top:20px;
+     right:25px;
+    }
+  }
+
+ /* .swal2-popup .swal2-styled:focus {
+  box-shadow: none !important;
+} */

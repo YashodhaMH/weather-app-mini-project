@@ -1,6 +1,8 @@
 .icon-mostly-sunny {
   height: 84px;
-  width: 80px;
+  width: 100px;
+  /* width: 100%;
+  height: auto; */
 }
 .udupi-karnataka {
   height: 24px;
@@ -13,13 +15,39 @@
   line-height: 24px;
   text-align: center;
 }
+/* #bel{
+  display: flex;
+  flex-wrap: row wrap;
+  width: 45vh;
+
+}
+#item{
+  width:50px;
+  height:20px
+} */
+.icon-temperature-info {
+  height: 25px;
+  width: 19px;
+}
+#flexm {
+  display: flex;
+  flex-direction: row;
+}
 .line-copy {
   box-sizing: border-box;
   height: 1px;
-
+  width: 100%;
   border: 1px solid #ffffff;
   opacity: 0.3;
 }
+#bel {
+  display: flex;
+  flex-direction: column;
+}
+#v {
+  display: inline-block;
+}
+
 .add-to-favourite {
   height: 15px;
   width: 150px;
@@ -38,8 +66,6 @@
   line-height: 25px;
 }
 .min-max {
-  height: 25px;
-  width: 69px;
   color: #ffffff;
   font-family: Roboto;
   font-size: 22px;
@@ -49,8 +75,6 @@
 }
 
 .min-maxl {
-  height: 18px;
-
   color: #ffffff;
   font-family: Roboto;
   font-size: 15px;
@@ -73,31 +97,28 @@
   font-size: 64px;
 }
 #temperature {
-  font-size: 88px;
-  font-weight: bold;
-  color: white;
-
-  margin: 0px 19px 0px;
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: 64px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 75px;
 }
 
 .main {
   display: flex;
-  height: 40px;
-  width: 83px;
-  margin-top: 20px;
+  height: 30px;
+  width: 55px;
+  margin-top: 11px;
 }
 
 #btn1,
 #btn2 {
-  font-size: 22px;
-  line-height: 2;
-  font-family: "open";
-  font-weight: bold;
-  color: red;
-  max-width: 100px;
-  max-height: 50px;
-  height: 100%;
-  width: 100%;
+  box-sizing: border-box;
+  height: 30px;
+  width: 28px;
+  border: 1px solid #ffffff;
+  border-radius: 2px 0 0 2px;
 }
 #date1 {
   display: none;
@@ -112,12 +133,93 @@
 .break {
   display: none;
 }
-@media only screen and (max-width: 580px) {
-  #footer{
-    overflow: hidden;
-    width:580px;
-    height:100px
+.break1 {
+  display: none;
+}
+.fa-heart-o {
+  color: white;
+  cursor: pointer;
+  z-index: 1;
+  font-size: 18px;
+}
+
+.fa-heart {
+  color: #fad05b;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 769px) {
+  #empty {
+    display: none;
   }
+  #footer {
+    position: absolute;
+    left: 0px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    width: 110%;
+    height: 115px;
+    background-color: rgba(255, 255, 255, 0.11);
+   bottom: -4px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+  }
+  #footer ::-webkit-scrollbar{
+    width: 0;
+  }
+  #flexm {
+    margin-top: 25px;
+    width: 180px;
+    height: 100%;
+  }
+  .list::-webkit-scrollbar {
+    -webkit-appearance: scrollbarthumb-horizontal;
+  }
+  .break1 {
+    display: block;
+  }
+  .line-copy {
+    display: none;
+  }
+  .icon-temperature-info {
+    height: 26px;
+    width: 13px;
+  }
+  .min-max {
+    line-height: 21px;
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 580px) {
+  .line-copy {
+    display: none;
+  }
+  .break {
+    display: block;
+  }
+  #footer {
+    /* background-color: black; */
+
+    background-color: rgba(255, 255, 255, 0.11);
+    position: absolute;
+    left: 1px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .line-copy {
+    display: none;
+  }
+
+  .icon-temperature-info {
+    height: 26px;
+    width: 13px;
+  }
+  .min-max {
+    line-height: 21px;
+    font-size: 18px;
+  }
+
   #date1 {
     display: block;
   }

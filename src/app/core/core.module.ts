@@ -5,6 +5,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CommonInterceptor } from './common.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 
@@ -19,10 +21,17 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FormsModule,
     FontAwesomeModule
   ],
+  providers:[{
+    provide:HTTP_INTERCEPTORS, useClass:CommonInterceptor,multi:true
+  }],
+ 
   exports:[
     HeaderComponent,
     NavigationComponent 
 
-  ]
+  ],
+  // providers:[{
+  //  {provide:}
+  // }]
 })
 export class CoreModule { }

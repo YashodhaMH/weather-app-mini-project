@@ -1,37 +1,27 @@
 <nav id="navbar1" class="navbar navbar-expand-sm">
   <div class="container">
-    <button
-      class="navbar-toggler toggler-example shadow-none"
-      type="button"
-      data-bs-toggle="modal"
-      data-bs-target="#myModal"
-    >
+    <button class="navbar-toggler toggler-example shadow-none" type="button" data-bs-toggle="modal"
+      data-bs-target="#myModal">
       <span class="dark-blue-text"> <i class="fa fa-bars"></i></span>
     </button>
-    <div
-      class="modal left fade"
-      id="myModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="myModalLabel"
-    >
+    <div class="modal left fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-
+          <br>
           <div class="modal-body">
             <div>
-              <span routerLink="home"  routerLinkActive="activecolorModal" [routerLinkActiveOptions]="{ exact: true }">HOME</span>
+              <span routerLink="home" data-bs-dismiss="modal" routerLinkActive="activecolorModal"
+                [routerLinkActiveOptions]="{ exact: true }">HOME</span>
             </div>
             <br />
             <div>
-              <span routerLink="recent-search"  routerLinkActive="activecolorModal">RECENT SEARCH</span>
+              <span routerLink="favourite" data-bs-dismiss="modal" routerLinkActive="activecolorModal">FAVOURITE</span>
+
             </div>
             <br />
             <div>
-              <span routerLink="favourite"  routerLinkActive="activecolorModal">FAVOURITE</span>
+              <span routerLink="recent-search" data-bs-dismiss="modal" routerLinkActive="activecolorModal">RECENT
+                SEARCH</span>
             </div>
           </div>
         </div>
@@ -39,57 +29,42 @@
     </div>
 
     <div class="container">
-      <div class="row justify-content-start">
+      <div class="row justify-content-start" id="row">
         <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-          <div class="col-md-1 col-1">
-            <span
-              class="home"
-              routerLink="home"
-              routerLinkActive="activecolor"
-              [routerLinkActiveOptions]="{ exact: true }"
-              >HOME</span
-            >
+          <div class="col-auto ">
+            <span class="home" routerLink="home" routerLinkActive="activecolor"
+              [routerLinkActiveOptions]="{ exact: true }">HOME</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </div>
-          <div class="col-md-2 col-3">
-            <span
-              class="recent-search"
-              routerLink="recent-search"
-              routerLinkActive="activecolor"
-              >RECENT SEARCH</span
-            >
+          <div class="col-lg-1 col-sm-2 ">
+            <span class="favourite" routerLink="favourite" routerLinkActive="activecolor">FAVOURITE</span>
           </div>
-          <div class="col-md-1 col-1">
-            <span
-              class="favourite"
-              routerLink="favourite"
-              routerLinkActive="activecolor"
-              >FAVOURITE</span
-            >
+          <div class="col-lg-2 col-sm-3 ">
+            <span class="recent-search" routerLink="recent-search" routerLinkActive="activecolor">RECENT SEARCH</span>
           </div>
-        </div>
-        <div class="col-md-10 col-sm-10 col-10 text-end" id="date">
-     <span class="wed-28-nov-2018-11">
+          <div class="offset-lg-6  col-lg-3 offset-sm-2 col-sm-5 text-center wed-28-nov-2018-11">
 
-         {{ dateTime | date: "EEE" | uppercase }},
-          {{ dateTime | date: "dd" }}
-          {{ dateTime | date: "MMM" | uppercase }}
-          {{ dateTime | date: "yyyy" }}&nbsp;
-          {{ dateTime | date: "hh" }}:{{ dateTime | date: "mm" }}&nbsp;
-          {{ dateTime | date: "a" }}
-        </span> 
+
+            {{ dateTime | date: "EEE" | titlecase }},
+            {{ dateTime | date: "dd" }}
+            {{ dateTime | date: "MMM" | titlecase}}
+            {{ dateTime | date: "yyyy" }}&nbsp;&nbsp;
+            {{ dateTime | date: "hh" }}:{{ dateTime | date: "mm" }}&nbsp;
+            {{ dateTime | date: "a" }}
+
+          </div>
+
         </div>
+        <br> <br>
+        <hr />
       </div>
     </div>
-
-    <hr />
   </div>
 </nav>
-<div class="container" id="navMobile">
-  <div class="navMobile">
+
+  <!-- <div class="navMobile" id="navMobile">
     <span><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
-  </div>
-</div>
+  </div> -->
+
 <div class="br">
   <br />
 </div>
-

@@ -1,67 +1,53 @@
-
-<div class="break">
-  <br><br><br>
-</div>
+<div class="break"><br /><br /><br /></div>
 <div class="container mt-2">
-<div class="container mt-2" style="color: white">
-  <ng-template [ngIf]="favData.length!==0" [ngIfElse]="displayImage">
-    <div class="row">
-      <div class="col-8" style="color: white">{{favData.length}} City added as Favourite</div>
-      <div class="col-4  d-flex justify-content-end">
-        <a (click)="removeAll()" href="favourite" style="color: white"
-          >Remove all</a
-        >
+  <div class="container mt-2" style="color: white">
+    <ng-template [ngIf]="favData.length !== 0" [ngIfElse]="displayImage">
+      <div class="row">
+        <div class="col-8" style="color: white">
+          {{ favData.length }} City added as Favourite
+        </div>
+        <div class="col-4 d-flex justify-content-end">
+          <a (click)="removeAll()" style="color: white; text-decoration: none; cursor: pointer">Remove all</a>
+        </div>
       </div>
-    </div>
 
-    <br />
-    <div class="table-responsive">
-    <table
-      class="table"
-      id="myTable"
-      style="color: white"
-    >
-      <tbody>
-        <tr *ngFor="let item of favData; let i = index" >
-          <td>{{ item.name }},{{ item.state }}</td>
+      <br />
+      <div class="">
+        <table class="table table-responsive" id="myTable">
+          <tbody>
+            <tr class="d-flex" *ngFor="let item of favData; let i = index">
+              <td class="col-3 align-self-center name" (click)="searchCity(item.name)">
+                {{ item.name }}, &nbsp;{{ item.state }}
+              </td>
 
-          <td>
-            <img
-              src="http://openweathermap.org/img/w/{{ item.iconid }}.png"
-              class="icon-mostly-sunny"
-            />
-          </td>
-          <td>{{ item.c }}C</td>
-          <td>{{ item.desc }}</td>
-          <td>
-            <span id="heart"
-              ><i
-                (click)="onHeartClick(i)"
-                [ngClass]="item.isLiked ? 'fa fa-heart' : 'fa fa-heart-o'"
-                aria-hidden="true"
-              ></i>
-            </span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-  </ng-template>
-  <ng-template #displayImage>
-    
-
-    
-    <div class="d-flex flex-row justify-content-center align-items-center" style="height:200px">
-      <img src="assets\images\icon_nothing.png" class="icon-temperature-info" />
-    </div>
-    <div class="d-flex flex-row justify-content-center align-items-center"  >
-      <span id="noData">No Recent Search</span>
-      
-    </div>
-   
-     
-    
-  
-  </ng-template>
-</div>
+              <td class="col-2 align-self-center text-end m">
+                <img src="http://openweathermap.org/img/w/{{ item.iconid }}.png" />
+              </td>
+             
+              <td class="col-1 align-self-center text-center f">
+                <span id="temperature" *ngIf="TempC; else f">{{ item.c }}&#176;<span class="span">C</span></span>
+                <ng-template #f>
+                  <span id="temperature">{{ item.f }}&#176;<span class="span"></span>F</span>
+                </ng-template>
+              </td>
+              <td class="col-5 align-self-center c">{{ item.desc }}</td>
+              <td class="col-1 align-self-center heart">
+                <span id="heart"><i (click)="onHeartClick(i)" [ngClass]="item.isLiked ? 'fa fa-heart' : 'fa fa-heart-o'"
+                    aria-hidden="true"></i>
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </ng-template>
+    <ng-template #displayImage>
+      <div class="d-flex flex-row justify-content-center align-items-center" style="height: 200px">
+        <img src="assets\images\icon_nothing.png" class="icon-temperature-info" />
+      </div>
+      <div class="d-flex flex-row justify-content-center align-items-center">
+        <span id="noData">No Favourites added</span>
+      </div>
+    </ng-template>
+  </div>
 </div>

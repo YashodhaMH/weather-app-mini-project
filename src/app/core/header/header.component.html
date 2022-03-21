@@ -1,64 +1,69 @@
-<div class="container" id="con" >
+<div class="container" id="desktopHeader">
   <br />
-    <div class="row">
-    <div class="col" >
+  <div class="row">
+    <div class="col">
       <img class="logo_web" src="assets\images\logo_web.png" id="logo" />
-     
     </div>
     <div class="col" id="columne">
-      <div class="input-group mb-3">
-        <input
-          type="text"
-          class="form-control"
-          [(ngModel)]="input"
-          placeholder="search city"
-          aria-describedby="basic-addon2"
-        />
+      <div class="input-group mb-3 searchbarwithicon">
+        <input type="text" class="form-control shadow-none searchTerm" [(ngModel)]="input" placeholder="Search city"
+          aria-describedby="basic-addon2" (keyup)="handleKeyUpForDesktop($event)" />
         <div class="input-group-append">
-          <button
-            class="btn btn-outline-secondary"
-            type="button"
-            routerLink="home"
-            (click)="searchData()"
-          >
-            <i class="fa fa-search"></i>
+          <button class="btn btn-primary shadow-none"  style=" border: 1px solid transparent" type="button"  (click)="searchData()">
+            <i class="fa fa-search" ></i>
           </button>
         </div>
       </div>
-      
-       <div class="search-icon" id="search-icon">
-      
-    <button type="button" class="btn btn-primary shadow-none" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color:transparent; border:1px solid transparent">
-      <i class="fa fa-search" style="color:white; font-size:20px; top:0px; position:absolute"></i>
-    </button>
-  </div>
-  </div>
+      <div class="search-icon" id="search-icon">
+        <button type="button" class="btn btn-primary shadow-none" data-bs-toggle="modal" data-bs-target="#exampleModal"
+          style="background-color: transparent; border: 1px solid transparent">
+          <i class="fa fa-search " style="color: white; font-size: 20px; top: 0px; position: absolute"></i>
+        </button>
+      </div>
     </div>
-   
+  </div>
+
   <br />
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
+
+<div class="container" id="mobileHeader">
+  <br>
+  <div class="row ">
+    <div class="col-2 text-center">
+    <span><i class="fa fa-arrow-left" id="MobileBack" aria-hidden="true" (click)="backToHome()" ></i></span>
+  </div>
+  <div class="col-8 " id="routerName">
+    {{currentRoute}}
+  </div>
+ 
+  <div class="col-2 text-start">
+    <i class="fa fa-search "  id="MobileSearch" data-bs-toggle="modal" data-bs-target="#exampleModal" ></i>
+  </div>
+  </div>
+  </div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <i class="fa fa-arrow-left" aria-hidden="true" id="backToHome" style="font-size: 20px ;-webkit-text-stroke:1px white;" data-bs-dismiss="modal"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="search" class=" form-control shadow-none "name="input"   id="inp" [(ngModel)]="input"
+            (keyup)="handleKeyUpForMobile($event)" placeholder="Search for City"   />
+        </div>
         
-   <i class="fa fa-arrow-left" aria-hidden="true" style="font-size:20px;" data-bs-dismiss="modal"></i>&nbsp;&nbsp;
-        <input type="text" name="input" id="lable"class="form-control" id="inp" [(ngModel)]="input" (keyup)="handleKeyUp($event)" placeholder="Search">
-       
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        ...
-      </div>
-     
     </div>
   </div>
-</div>
-
-
-
-
-
-
-
+  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <i class="fa fa-arrow-left" aria-hidden="true" style="font-size: 20px ;" id="v" data-bs-dismiss="modal"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="search" name="input" id="lable" class="form-control" id="inp" [(ngModel)]="input"
+            (keyup)="handleKeyUp($event)" placeholder="Search for City" style="box-shadow: none;"/> 
+        </div>
+        <div class="modal-body">...</div>
+      </div>
+    </div>
+  </div> -->
+ 

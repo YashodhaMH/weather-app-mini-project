@@ -1,10 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { WeatherapiService } from '../weatherapi.service';
-
-
-
-
-
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
@@ -12,8 +6,7 @@ import { WeatherapiService } from '../weatherapi.service';
 })
 export class NavigationComponent implements OnInit {
   dateTime = new Date()
-  currentRoute:any;
- constructor(private service:WeatherapiService){}
+ constructor(){}
 
   ngOnInit(): void {
     setInterval(()=>{
